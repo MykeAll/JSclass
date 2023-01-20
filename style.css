@@ -1,0 +1,8 @@
+.nav {
+    background-color: bisque;
+}
+
+.nav a {
+    color: brown;
+    display: block;
+}
