@@ -1,8 +1,22 @@
 .nav {
     background-color: bisque;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .nav a {
     color: brown;
-    display: block;
+    font-size: x-large;
+    margin: 10px;
+    padding: 4px;
+    border-radius: 10px;
+    border: solid 2px;
+    text-decoration: none;
+    background: white;
+}
+
+.nav :hover {
+    color: white;
+    background-color: green;
 }
