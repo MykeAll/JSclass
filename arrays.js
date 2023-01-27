@@ -99,7 +99,7 @@ while(i < john.length) {
 // continue and break statements
 var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
 for (var i = 0; i < john.length; i++) {
-    if (typeof john[i] !== 'string') continue;
+    if (typeof john[i] !== 'number') continue;
     console.log(john[i]);
 }
 
