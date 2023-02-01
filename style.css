@@ -109,10 +109,11 @@ main {
   background-color: white;
   border: solid green;
   border-radius: 100%;
+  margin: 10px;
 }
-.active1 {
+/* .active1 {
   border-radius: 100%;
-}
+} */
 .player-active .name {
   font-weight: 700;
 }
@@ -204,6 +205,14 @@ main {
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
 }
 
+#dice-1 {
+  top: 120px;
+}
+
+#dice-2 {
+  top: 250px;
+}
+
 /* .player-winner {
   background-color: #2f2f2f;
 } 
@@ -215,7 +224,10 @@ main {
 } */
 
 .player-winner {
-  background-color: #f7f7f7;
+  background-color: yellow;
+  border: solid black;
+  border-radius: 30px;
+  margin: 10px;
 }
 
 .player-winner .name {
@@ -225,4 +237,22 @@ main {
 
 .hidden {
   display: none;
+}
+
+.final-score {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 520px;
+  color: #555;
+  font-size: 18px;
+  font-family: 'Lato';
+  text-align: center;
+  padding: 10px;
+  width: 160px;
+  text-transform: uppercase;
+}
+
+.final-score:focus {
+  outline: none;
 }
