@@ -40,7 +40,7 @@ html {
 body {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
-  height: 100vh;
+  /* height: 100vh; */
   color: #333;
   background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
   /* display: flex; */
@@ -50,8 +50,16 @@ body {
 
 .h1 {
     color: #fff;
-    padding: 40px;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-bottom: 20px;
 }
+
+/* h2 {
+    color: #fff;
+    padding-left: 40px;
+    padding-bottom: 20px;
+} */
 
 /* LAYOUT */
 main {
@@ -68,6 +76,7 @@ main {
   justify-content: center;
   align-items: center;
   margin: auto;
+  margin-bottom: 30px;
 }
 
 .player {
@@ -255,4 +264,110 @@ main {
 
 .final-score:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 700px) {
+  main {
+    max-width: 300px;
+    height: 57vh;
+    margin: 10px;
+    padding: 10px;
+  }
+  .player {
+    padding: 4px;
+  }
+
+  .name {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    font-weight: 400;
+    padding-top: 4px;
+  }
+
+  .score {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+
+  .player-active {
+    margin: 2px;
+  }
+  
+  
+  .active {
+    margin: 2px;
+  }
+  /* .active1 {
+    border-radius: 100%;
+  } */
+  .player-active .name {
+    font-weight: 700;
+  }
+  .player-active .score {
+    font-weight: 400;
+  }
+  
+  .player-active .current {
+    opacity: 1;
+  }
+  
+  .current {
+    width: 75px;
+    height: 50px;
+    margin-bottom: 7px;
+    padding: 0.7rem;
+    justify-content: center;
+  }
+  
+  .current-label {
+    font-size: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+  
+  .current-score {
+    font-size: 1.5rem;
+    margin-top: 2px;
+    margin-bottom: 0%;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.2rem;
+    width: 120px;
+    height: 37px;
+  }
+  .btn-new {
+    top: 0.7rem;
+    padding: 3px;
+  }
+  .btn-roll {
+    top: 19rem;
+  }
+  .btn-hold {
+    top: 23rem;
+  }
+
+  .dice {
+    top: 0.1rem;
+    height: 4rem;
+  }
+  
+  #dice-1 {
+    top: 70px;
+  }
+  
+  #dice-2 {
+    top: 120px;
+  }
+
+  .final-score {
+    top: 28rem;
+    font-size: 12px;
+    padding: 4px;
+    width: 90px;
+    height: 20px;
+  }
 }
