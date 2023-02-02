@@ -45,7 +45,7 @@ console.log(mykeallOlder);
 // typeof operator
 console.log(typeof mykeallOlder);
 console.log(typeof ageMykeall);
-console.log(typeof 'Mark is older than Qudos');
+console.log(typeof 'Mark is older than Mykeall');
 var x;
 console.log(typeof x);
 
@@ -62,7 +62,7 @@ var isfullAge = now - yearMykeall + fullAge; //true
 console.log(isfullAge);
 
 //
-var ageMykeall = now - yearMark;
+var ageMykeall = now - yearMykeall;
 var ageMark = 35;
 var average = (ageMykeall + ageMark) / 2;
 console.log(average);
