@@ -1,4 +1,4 @@
-var firstName = 'Qudos';
+var firstName = 'Mykeall';
 var age = 28;
 
 // Type coercion
@@ -29,7 +29,7 @@ ageMykeall = now - 28;
 ageMark = now - 33;
 
 //Math operators
-yearQudos = now - ageMykeall;
+yearMykeall = now - ageMykeall;
 yearMark = now - ageMark;
 
 console.log(yearMykeall);
@@ -39,7 +39,7 @@ console.log(now * 2);
 console.log(now / 10);
 
 //Logical operators
-var mykeallOlder = ageQudos < ageMark;
+var mykeallOlder = ageMykeall < ageMark;
 console.log(mykeallOlder);
 
 // typeof operator
@@ -62,7 +62,7 @@ var isfullAge = now - yearMykeall + fullAge; //true
 console.log(isfullAge);
 
 //
-var ageMykeall = now - yearQudos;
+var ageMykeall = now - yearMark;
 var ageMark = 35;
 var average = (ageMykeall + ageMark) / 2;
 console.log(average);
