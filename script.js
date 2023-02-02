@@ -23,28 +23,28 @@ console.log(firstName + ' ' + lastName);
 /************************
  * Basic operators
  */
-var year, yearQudos, yearMark;
+var year, yearMykeall, yearMark;
 now = 2018;
-ageQudos = now - 28;
+ageMykeall = now - 28;
 ageMark = now - 33;
 
 //Math operators
-yearQudos = now - ageQudos;
+yearQudos = now - ageMykeall;
 yearMark = now - ageMark;
 
-console.log(yearQudos);
+console.log(yearMykeall);
 
 console.log(now + 2);
 console.log(now * 2);
 console.log(now / 10);
 
 //Logical operators
-var qudosOlder = ageQudos < ageMark;
-console.log(qudosOlder);
+var mykeallOlder = ageQudos < ageMark;
+console.log(mykeallOlder);
 
 // typeof operator
-console.log(typeof qudosOlder);
-console.log(typeof ageQudos);
+console.log(typeof mykeallOlder);
+console.log(typeof ageMykeall);
 console.log(typeof 'Mark is older than Qudos');
 var x;
 console.log(typeof x);
@@ -54,17 +54,17 @@ console.log(typeof x);
  */
 
 var now = 2018;
-var yearQudos = 1989;
+var yearMykeall = 1989;
 var fullAge = 18;
 
 //Multiple operators
-var isfullAge = now - yearQudos + fullAge; //true
+var isfullAge = now - yearMykeall + fullAge; //true
 console.log(isfullAge);
 
 //
-var ageQudos = now - yearQudos;
+var ageMykeall = now - yearQudos;
 var ageMark = 35;
-var average = (ageQudos + ageMark) / 2;
+var average = (ageMykeall + ageMark) / 2;
 console.log(average);
 
 //Multiple assignments
