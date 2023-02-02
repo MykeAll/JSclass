@@ -63,7 +63,7 @@ body {
 
 /* LAYOUT */
 main {
-  position: relative;
+  /* position: relative; */
   width: 100rem;
   height: 60rem;
   background-color: rgba(228, 224, 224, 0.986);
@@ -80,7 +80,8 @@ main {
 }
 
 .player {
-  flex: 50%;
+  /* flex: 50%; */
+  flex: auto;
   padding: 9rem;
   display: flex;
   flex-direction: column;
@@ -119,6 +120,10 @@ main {
   border: solid green;
   border-radius: 100%;
   margin: 10px;
+}
+
+.active .name {
+  font-weight: 700;
 }
 /* .active1 {
   border-radius: 100%;
@@ -275,6 +280,7 @@ main {
   }
   .player {
     padding: 4px;
+    padding-bottom: 0rem;
   }
 
   .name {
@@ -332,11 +338,17 @@ main {
     margin-bottom: 0%;
   }
 
+  .btn::first-letter {
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-right: 0.2rem;
+  }
+
   .btn {
     font-size: 1.2rem;
     font-weight: 700;
     padding: 0.2rem;
-    width: 120px;
+    width: 110px;
     height: 37px;
   }
   .btn-new {
@@ -344,29 +356,29 @@ main {
     padding: 3px;
   }
   .btn-roll {
-    top: 19rem;
+    top: 17rem;
   }
   .btn-hold {
-    top: 23rem;
+    top: 21rem;
   }
 
   .dice {
     top: 0.1rem;
-    height: 4rem;
+    height: 3rem;
   }
   
   #dice-1 {
-    top: 70px;
+    top: 50px;
   }
   
   #dice-2 {
-    top: 120px;
+    top: 100px;
   }
 
   .final-score {
-    top: 28rem;
+    top: 26rem;
     font-size: 12px;
-    padding: 4px;
+    padding: 3px;
     width: 90px;
     height: 20px;
   }
