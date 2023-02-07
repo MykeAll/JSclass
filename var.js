@@ -149,8 +149,36 @@ var box5 = {
         });
     }
 }
-// box5.clickMe();
+box5.clickMe();
 
+var box5 = {
+    color: 'blue',
+    position: 2,
+    clickMe: function() {
+        
+        var self = this;
+        document.querySelector('.blue').addEventListener('click', function() {
+            var str = 'This is box number ' + self.position + ' and it is ' + self.color; alert(str);
+        });
+    }
+}
+box5.clickMe();
+
+var box5 = {
+    color: 'orangered',
+    position: 3,
+    clickMe: function() {
+        
+        var self = this;
+        document.querySelector('.orange').addEventListener('click', function() {
+            var str = 'This is box number ' + self.position + ' and it is ' + self.color; alert(str);
+        });
+    }
+}
+
+box5.clickMe();
+
+/*
 //ES6
 const box6 = {
     color: 'green',
@@ -161,7 +189,8 @@ const box6 = {
         });
     }
 }
-box6.clickMe();
+// box6.clickMe();
+*/
 
 
 function Person(name) {
