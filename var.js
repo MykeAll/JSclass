@@ -217,3 +217,268 @@ Person.prototype.myFriends6 = function(friends) {
 }
 
 new Person('Mike').myFriends6(friends);
+
+
+/////////////////////////////
+// Lecture: Destructuring
+
+//ES5
+var john = ['John', 26];
+//var name = john[0];
+//var age = john[1];
+
+//ES6
+const [name, age] = ['John', 26];
+console.log(name);
+console.log(age);
+
+const obj = {
+    firstName1: 'John',
+    lastName1: 'Smith'
+};
+
+const {firstName1, lastName1} = obj;
+console.log(firstName1);
+console.log(lastName1);
+//same thing
+const {firstName1: a, lastName1: b} = obj;
+console.log(a);
+console.log(b);
+
+function calcAgeRetirement(year) {
+    const age = new
+    Date().getFullYear() - year;
+    return [age, 65 - age];
+}
+
+const [age1, retirement] = calcAgeRetirement(1990);
+console.log(age1);
+console.log(retirement);
+
+
+////////////////////////////////
+// Lecture: Arrays in ES6 ES2015
+
+const boxes = document.querySelectorAll('.box');
+
+//ES5
+var boxesArr5 = Array.prototype.slice.call(boxes);
+boxesArr5.forEach(function(cur) {
+    cur.style.backgroundColor = 'dodgerblue';
+});
+
+//ES6
+const boxesArr6 = Array.from(boxes);
+boxesArr6.forEach(cur => cur.style.backgroundColor = 'dodgerblue');
+
+/*
+Array.from(boxes).forEach(cur => cur.style.backgroundColor = 'dodgerblue');
+*/
+
+//ES5
+/*
+for(var i = 0; i < boxesArr5.length; i++) {
+    if(boxesArr5[i].className === 'box blue') {
+        continue;
+        // break;
+    }
+
+    boxesArr5[i].textContent = 'I changed to blue!';
+}
+*/
+
+//ES6
+/*
+for(const cur of boxesArr6) {
+    if(cur.className === 'box blue') {
+        continue;
+        // break;
+    }
+
+    cur.textContent = 'I changed to blue!';
+}
+*/
+
+for(const cur of boxesArr6) {
+    if(cur.className.includes('blue')) {
+        // continue;
+        break;
+    }
+
+    cur.textContent = 'I changed to blue!';
+}
+
+//ES5
+var ages = [12, 17, 8, 21, 14, 11];
+
+var full = ages.map(function(cur) {
+    return cur >= 18;
+});
+console.log(full);
+
+console.log(full.indexOf(true));
+console.log(ages[full.indexOf(true)]);
+
+//ES6
+console.log(ages.findIndex(cur => cur >= 18));
+console.log(ages.find(cur => cur >= 18));
+
+
+/////////////////////////////////
+// Lecture: Spread operator (is used in the function call)
+
+function addFourAges (a, b, c, d) {
+    return a + b + c + d;
+}
+
+var sum1 = addFourAges(18, 30, 12, 21);
+console.log(sum1);
+
+//ES5
+var ages = [18, 30, 12, 21];
+var sum2 = addFourAges.apply(null, ages);
+console.log(sum2);
+
+//ES6
+const sum3 = addFourAges(...ages);
+console.log(sum3);
+
+const familySmith = ['John', 'Jane', 'Mark'];
+const familyMiller = ['Mary', 'Bob', 'Ann'];
+const bigFamily = [...familySmith, 'Lily', ...familyMiller];
+console.log(bigFamily);
+
+const h = document.querySelector('h1');
+const boxes1 = document.querySelectorAll('.box');
+const all = [h, ...boxes1];
+
+Array.from(all).forEach(cur => cur.style.color = 'purpple');
+
+
+///////////////////////////
+// Lecture: Rest parameters (is used in the function declaration to accept or return a number of parameters)
+
+/*
+//ES5
+function isFullAge() {
+    // console.log(arguments);
+    var argsArr = Array.prototype.slice.call(arguments);
+
+    argsArr.forEach(function(cur) {
+        console.log((2016 - cur) >= 18);
+    })
+}
+
+
+// isFullAge(1990, 1999, 1965);
+// isFullAge(1990, 1999, 1965, 2016, 1987);
+
+//ES6
+function isFullAge6(...years) {
+    years.forEach(cur => console.log ((2016 - cur) >= 18));
+}
+
+isFullAge6(1990, 1999, 1965, 2016, 1987);
+*/
+
+
+//ES5
+function isFullAge5(limit) {
+    var argsArr = Array.prototype.slice.call(arguments);
+
+    argsArr.forEach(function(cur) {
+        console.log((2016 - cur) >= limit);
+    })
+}
+
+
+isFullAge5(16, 1990, 1999, 1965);
+// isFullAge(1990, 1999, 1965, 2016, 1987);
+
+//ES6
+function isFullAge6(limit, ...years) {
+    years.forEach(cur => console.log ((2016 - cur) >= limit));
+}
+
+isFullAge6(16, 1990, 1999, 1965, 2016, 1987);
+
+
+///////////////////////////
+// Lecture: Default parameters
+
+/*
+//ES5
+function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
+
+    lastName === undefined ? lastName = 'Smith' : lastName = lastName;
+    nationality === undefined ?
+    nationality = 'American' :
+    nationality = nationality ;
+
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.yearOfBirth = yearOfBirth;
+    this.nationality = nationality;
+}
+
+var john = new SmithPerson('John', 1990);
+var emily = new SmithPerson('Emily', 1983, 'Diaz', 'spanish')
+*/
+
+//ES6
+function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = 'American') {
+
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.yearOfBirth = yearOfBirth;
+    this.nationality = nationality;
+}
+
+var john = new SmithPerson('John', 1990);
+var emily = new SmithPerson('Emily', 1983, 'Diaz', 'spanish');
+
+
+
+///////////////////////////
+// Lecture: Maps (we can use anything as key, it is easy to get the size of a map using the size property; we can add and remove data from a map)
+
+const question = new Map();
+question.set('question', 'What is the official name of the latest major JavaScript version?');
+question.set(1, 'ES5');
+question.set(2, 'ES6');
+question.set(3, 'ES2015');
+question.set(4, 'ES7');
+question.set('correct', 3);
+question.set(true, 'Correct answer :C');
+question.set(false, 'Wrong, please try again!');
+
+console.log(question.get('question'));
+// console.log(question.size);
+
+if(question.has(4)) {
+    // question.delete(4);
+    // console.log('Answer 4 is here')
+
+}
+// question.delete(4);
+// question.clear();
+
+// question.forEach((value, key) => console.log(`This is ${key}, and it's set to ${value}`));
+
+
+/*
+for (let [key, value] of
+    question.entries()) {
+    console.log(`This is ${key}, and it's set to ${value}`);
+}
+*/
+
+for (let [key, value] of
+    question.entries()) {
+        if (typeof(key) === 'number') {
+    console.log(`Answer ${key}: ${value}`);
+}
+}
+
+const ans = parseInt(prompt('Input the correct answer'));
+console.log(question.get(ans === question.get('correct')));

@@ -10,7 +10,7 @@
     background-color: bisque;
     padding: 10px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .nav a {
@@ -272,6 +272,9 @@ main {
 }
 
 @media only screen and (max-width: 700px) {
+  .nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
   main {
     max-width: 340px;
     height: 40vh;
